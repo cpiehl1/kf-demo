@@ -1,5 +1,3 @@
-arn:aws:iam::052830454190:user/devops-demo
-
 ```
 sudo curl --silent --location -o /usr/local/bin/kubectl \
    https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.11/2020-09-18/bin/linux/amd64/kubectl
