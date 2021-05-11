@@ -195,4 +195,9 @@ In order to access the dashboard we port-forward to the cluster. We will have ou
 kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
 ```
 
+### Useful Resources
+
+- [EKS workshop](https://www.eksworkshop.com/)
+- [Kubeflow documentaion](https://www.kubeflow.org/)
+
 
