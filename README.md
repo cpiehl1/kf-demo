@@ -141,7 +141,7 @@ EoF
 source kf-install.sh
 ```
 
-#### Get the kfctl config
+#### Get the kfctl Config
 
 ```
 mkdir -p ${KF_DIR}
