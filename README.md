@@ -152,6 +152,14 @@ In order to access the dashboard we port-forward to the cluster. We will have ou
 kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
 ```
 
+#### Creating Notebook
+
+Once you access the dashboard, specify the namespace name and select notebook servers. Create a new notebook server in your namespace. You can specify a docker image with useful packages already installed. We use the following image: ```527798164940.dkr.ecr.us-west-2.amazonaws.com/tensorflow-1.15.2-notebook-cpu:1.0.0```. We also set the total amount of CPU reserved by the server to 1. The server will take few moments to initialize.
+
+#### Cloning Repo
+
+Once the notebook server is running press connect and then "Python 3" under "Notebooks". This will open up a jupyter notebook. Simply enter ```!git clone https://github.com/cpiehl1/kf-demo.git``` into the first cell and run it. This should clone our repo into the current directory. Go into the "kf-demo" folder, open the file "nb.ipynb" and follow the instructions inside.
+
 ### Useful Resources
 
 - [EKS workshop](https://www.eksworkshop.com/)
