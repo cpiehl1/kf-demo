@@ -118,14 +118,6 @@ export NODE_INSTANCE_ROLENAME=$(aws iam list-roles \
     .RoleName")
 ```
 
-Once we have found our role name we give it access to the container registry and S3, both of which will be used by Kubeflow.
-
-```
-aws iam attach-role-policy --role-name $NODE_INSTANCE_ROLENAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
-
-aws iam attach-role-policy --role-name $NODE_INSTANCE_ROLENAME --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
-```
-
 #### Modyfiying the Kfctl Config
 
 We set the cluster name, cluster region, and our nodegroup role name in the config file.
@@ -143,6 +135,14 @@ sed -i "s@- eksctl-kubeflow-demo-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@- ${NO
 cd ${KF_DIR}
 kfctl apply -V -f ${CONFIG_FILE}
 ```
+
+#### Assign Permissions
+```
+aws iam attach-role-policy --role-name $NODE_INSTANCE_ROLENAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+
+aws iam attach-role-policy --role-name $NODE_INSTANCE_ROLENAME --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+```
+
 
 #### Accessing the Dashboard
 
